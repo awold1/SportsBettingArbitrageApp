@@ -1,6 +1,6 @@
 from flask import Blueprint, request, render_template, redirect, flash
 
-from app.arbitrage_finder import arbitrage_seeker, arbitrage_calculator
+from app.arbitrage_finder import arbitrage_output
 
 arbitrage_routes = Blueprint("arbitrage_routes", __name__)
 
@@ -22,21 +22,20 @@ def arbitrage_dashboard():
         request_data = dict(request.args)
         print("URL PARAMS:", request_data)
 
-    desired_sport = request_data.get("sports_league") 
-    desired_winnings = request_data.get("desired_winnings") 
+    desired_sport = request_data.get("sports_league")  
+    max_bet = request_data.get("max_bet") 
+    week = request_data.get("week")
     try:
-        data = arbitrage_seeker(desired_sport, float(desired_winnings))
+        data = arbitrage_output(desired_sport, float(max_bet), week)
         return render_template("arbitrage_dashboard.html",
         data = data,
         desired_sport = desired_sport,
-        desired_winnings = desired_winnings
+        max_bet = max_bet
         )
     except Exception as err:
 
 
         print('OOPS', err)
 
-        flash("Market Data Error. Please check your symbol and try again!", "danger")
+        flash("Market Data Error. Market Data is not available for selected week", "danger")
         return redirect("/arbitrage/form")
-
-
