@@ -1,6 +1,6 @@
 from flask import Blueprint, request, render_template, redirect, flash
 
-from app.arbitrage_finder import arbitrage_output
+from app.arbitrage_finder import arbitrage_seeker
 
 arbitrage_routes = Blueprint("arbitrage_routes", __name__)
 
@@ -30,7 +30,7 @@ def arbitrage_dashboard():
         return render_template("arbitrage_dashboard.html",
         data = data,
         desired_sport = desired_sport,
-        max_bet = max_bet
+        desired_winnings = desired_winnings
         )
     except Exception as err:
 
