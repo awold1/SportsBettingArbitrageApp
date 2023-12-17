@@ -9,10 +9,7 @@ load_dotenv()
 
 ODDS_API_KEY = os.getenv("ODDS_API_KEY")
 
-weeks = ["Week 15", "Week 16", "Week 17", "Week 18", "Wild Card", "Divisional", "Conference Championships", "Super Bowl" ]
-date = ["2023-12-13T01:00:00Z", "2023-12-20T01:00:00Z", "2023-12-27T01:00:00Z", "2023-01-03T01:00:00Z", "2023-01-13T01:00:00Z", 
-        "2023-01-17T01:00:00Z", "2023-01-24T01:00:00Z", "2023-02-07T01:00:00Z", "2023-02-20T01:00:00Z"]
-unix_date = [1702429200, 1703034000, 1703638800, 1672707600, 1673571600, 1673917200, 1674522000, 1675731600, 1676854800]
+
 
 
 def to_usd(my_price):
@@ -56,6 +53,10 @@ def date_conversion(time):
     return game_time
 
 def data_retrieval(desired_sport, week):
+    weeks = ["Week 15", "Week 16", "Week 17", "Week 18", "Wild Card", "Divisional", "Conference Championships", "Super Bowl" ]
+    date = ["2023-12-13T01:00:00Z", "2023-12-20T01:00:00Z", "2023-12-27T01:00:00Z", "2023-01-03T01:00:00Z", "2023-01-13T01:00:00Z", 
+        "2023-01-17T01:00:00Z", "2023-01-24T01:00:00Z", "2023-02-07T01:00:00Z", "2023-02-20T01:00:00Z"]
+    unix_date = [1702429200, 1703034000, 1703638800, 1672707600, 1673571600, 1673917200, 1674522000, 1675731600, 1676854800]
     if (desired_sport == "NFL"):
         desired_sport = "americanfootball_nfl"
 

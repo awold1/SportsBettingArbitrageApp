@@ -26,23 +26,21 @@ ODDS_API_KEY="_________"
 ```
 
 
-# Requires API Key From Odds API
-
-python app/arbitrage_finder.py
-
-python -m app.arbitrage_finder
-
 ## Usage
 
-Run the example script:
+Run the arbitrage finder program locally:
 
 ```sh
 python app/arbitrage_finder.py
+```
+
+```sh
+python -m app.arbitrage_finder
+```
 
 
 
-
-Install Packages:
+## Install Packages:
 
 ```sh
 pip install -r requirements.txt
@@ -67,4 +65,6 @@ Run tests:
 pytest
 '''
 
+## Hosting on web:
 
+See DEPLOYING.md
