@@ -1,7 +1,10 @@
-from app.arbitrage_finder import data_retrieval, date_conversion
+from app.arbitrage_finder import data_retrieval, to_usd
 
 
-def date_test():
+def test_usd():
+    assert to_usd(5.0023) == "$5.00"
+
+def test_date():
     
-    assert type(data_retrieval("NFL", "Week 15")) == type(list)
+    assert data_retrieval("NFL", "Super Bowl") == None
 
