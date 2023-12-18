@@ -50,8 +50,8 @@ pip install -r requirements.txt
 FLASK_APP=web_app flask run
 
 # Windows OS:
-# ... if `export` doesn't work for you, try `set` instead
-# ... or set FLASK_APP variable via ".env" file
+ ... if `export` doesn't work for you, try `set` instead
+ ... or set FLASK_APP variable via ".env" file
 export FLASK_APP=web_app flask run
 
 
@@ -66,5 +66,3 @@ pytest
 '''
 
 ## Hosting on web:
-
-See DEPLOYING.md
