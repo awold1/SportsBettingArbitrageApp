@@ -9,4 +9,4 @@ def test_date():
     assert data_retrieval("NFL", "Super Bowl") == None
 
 def test_arbitrage():
-    assert arbitrage_seeker("NFL", 200, "Week 15") is not None
+    assert arbitrage_seeker("NFL", 200, "Week 16") is not None
